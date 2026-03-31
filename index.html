@@ -2,55 +2,69 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisualMax - AI Photo & Video Quality Enhancer | Best Free Tool 2026</title>
-    <meta name="description" content="World's fastest AI photo and video enhancer. 4K upscale, remove blur, restore old photos, 40+ effects. Free, no signup, under 3 seconds.">
-    <meta name="keywords" content="photo enhancer, video enhancer, AI upscale, 4K converter, blur remove, old photo restoration, free online tool">
-    <meta name="author" content="VisualMax">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.visualmax.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>VisualMax - AI Photo & Video Quality Enhancer</title>
+    <meta name="description" content="World's fastest AI photo and video enhancer. 4K upscale, remove blur, restore old photos, 40+ effects.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0a0f1e 0%, #0a1a2e 100%); color: #fff; min-height: 100vh; }
-        header { background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        /* Header */
+        header { background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
         .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 32px; font-weight: bold; background: linear-gradient(90deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
-        .nav-links a { color: #fff; text-decoration: none; transition: 0.3s; font-size: 14px; }
-        .nav-links a:hover { color: #4ecdc4; }
-        .hero { text-align: center; padding: 50px 20px 30px; }
-        .hero h1 { font-size: 48px; background: linear-gradient(90deg, #fff, #4ecdc4); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 15px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        .tool-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 40px 0; }
-        .tool-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border-radius: 24px; padding: 30px; width: 350px; text-align: center; border: 1px solid rgba(255,255,255,0.15); transition: transform 0.3s; }
+        .logo { font-size: 28px; font-weight: bold; background: linear-gradient(90deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        
+        /* 3-Dot Menu Styles */
+        .menu-container { position: relative; display: inline-block; }
+        .menu-icon { font-size: 28px; cursor: pointer; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 30px; transition: 0.3s; }
+        .menu-icon:hover { background: rgba(255,255,255,0.2); }
+        .dropdown-menu { display: none; position: absolute; right: 0; top: 45px; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); border-radius: 16px; min-width: 180px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); z-index: 1001; }
+        .dropdown-menu a { display: block; padding: 12px 20px; color: #fff; text-decoration: none; font-size: 14px; transition: 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .dropdown-menu a:hover { background: rgba(78,205,196,0.2); color: #4ecdc4; padding-left: 25px; }
+        .dropdown-menu.show { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Hero + Tool */
+        .hero { text-align: center; padding: 40px 20px 30px; }
+        .hero h1 { font-size: 42px; background: linear-gradient(90deg, #fff, #4ecdc4); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 15px; }
+        .hero p { font-size: 16px; opacity: 0.9; }
+        .tool-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 30px 0; }
+        .tool-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border-radius: 24px; padding: 25px; width: 350px; text-align: center; border: 1px solid rgba(255,255,255,0.15); transition: 0.3s; }
         .tool-box:hover { transform: translateY(-5px); }
-        .tool-box h2 { margin-bottom: 20px; color: #4ecdc4; }
-        .tool-icon { font-size: 60px; margin-bottom: 20px; }
-        input[type="file"] { width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; margin: 15px 0; }
+        .tool-box h2 { margin-bottom: 15px; color: #4ecdc4; font-size: 24px; }
+        .tool-icon { font-size: 50px; margin-bottom: 15px; }
+        input[type="file"] { width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; margin: 12px 0; cursor: pointer; }
         select { width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; margin: 10px 0; }
-        button { width: 100%; padding: 14px; background: linear-gradient(90deg, #ff6b6b, #4ecdc4); border: none; border-radius: 12px; color: white; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button { width: 100%; padding: 12px; background: linear-gradient(90deg, #ff6b6b, #4ecdc4); border: none; border-radius: 12px; color: white; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; margin: 5px 0; }
         button:hover { opacity: 0.9; transform: scale(1.02); }
-        .preview-area { margin-top: 20px; }
-        .preview-img, .preview-video { max-width: 100%; border-radius: 12px; margin-top: 15px; }
-        footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
-        footer a { color: #4ecdc4; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        @media (max-width: 768px) { .hero h1 { font-size: 32px; } .tool-box { width: 100%; } .nav-links { gap: 10px; justify-content: center; margin-top: 10px; } }
+        .download-btn { background: linear-gradient(90deg, #4ecdc4, #2c7a6e); margin-top: 10px; }
+        .preview-area { margin-top: 15px; }
+        .preview-img, .preview-video { max-width: 100%; max-height: 250px; border-radius: 12px; margin-top: 10px; border: 1px solid rgba(255,255,255,0.2); }
+        .status-msg { font-size: 12px; margin-top: 10px; color: #4ecdc4; }
+        footer { text-align: center; padding: 30px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; font-size: 12px; }
+        footer a { color: #4ecdc4; text-decoration: none; margin: 0 8px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 28px; } .tool-box { width: 100%; } .logo { font-size: 22px; } }
     </style>
 </head>
 <body>
     <header>
         <div class="container header-flex">
-            <div class="logo">VisualMax</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="photo.html">Photo</a>
-                <a href="video.html">Video</a>
-                <a href="effects.html">Effects</a>
-                <a href="blog.html">Blog</a>
-                <a href="articles.html">Articles</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="logo">✨ VisualMax</div>
+            <div class="menu-container">
+                <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html">🏠 Home</a>
+                    <a href="photo.html">📸 Photo Enhancer</a>
+                    <a href="video.html">🎥 Video Enhancer</a>
+                    <a href="effects.html">✨ 40+ Effects</a>
+                    <a href="blog.html">📝 Blog</a>
+                    <a href="articles.html">📚 Articles</a>
+                    <a href="about.html">ℹ️ About</a>
+                    <a href="contact.html">📧 Contact</a>
+                    <a href="privacy.html">🔒 Privacy</a>
+                    <a href="terms.html">⚖️ Terms</a>
+                </div>
             </div>
         </div>
     </header>
@@ -58,27 +72,32 @@
     <div class="container">
         <div class="hero">
             <h1>VisualMax AI</h1>
-            <p>World's Fastest Photo & Video Quality Enhancer | 4K Upscale • Remove Blur • Restore Old Photos • 40+ Effects</p>
+            <p>⚡ World's Fastest Photo & Video Quality Enhancer | 4K Upscale • Remove Blur • Restore Old Photos • 40+ Effects</p>
         </div>
 
         <div class="tool-container">
+            <!-- Photo Tool -->
             <div class="tool-box">
                 <div class="tool-icon">📸</div>
                 <h2>Photo Enhancer</h2>
                 <input type="file" id="photoFile" accept="image/*">
                 <select id="photoMode">
                     <option value="enhance">✨ Enhance Quality</option>
-                    <option value="upscale4k">📈 4K Upscale</option>
+                    <option value="upscale">📈 4K Upscale</option>
                     <option value="deblur">🔍 Remove Blur</option>
                     <option value="denoise">🔇 Remove Noise</option>
                     <option value="colorize">🎨 Colorize Old Photo</option>
                 </select>
                 <button id="enhancePhotoBtn">⚡ Enhance Now (Free)</button>
+                <button id="downloadPhotoBtn" class="download-btn" style="display:none;">⬇️ Download Enhanced Photo</button>
                 <canvas id="photoCanvas" style="display:none;"></canvas>
-                <div class="preview-area"><img id="photoPreview" class="preview-img" style="display:none;" alt="Enhanced"></div>
-                <p style="font-size:12px; margin-top:15px;">⚡ 3 seconds • No signup • AI powered</p>
+                <div class="preview-area">
+                    <img id="photoPreview" class="preview-img" style="display:none;" alt="Enhanced">
+                </div>
+                <p class="status-msg" id="photoStatus">⚡ 3 seconds • No signup • AI powered</p>
             </div>
 
+            <!-- Video Tool -->
             <div class="tool-box">
                 <div class="tool-icon">🎥</div>
                 <h2>Video Enhancer</h2>
@@ -91,56 +110,133 @@
                     <option value="stabilize">🎯 Stabilize Shaky Video</option>
                 </select>
                 <button id="enhanceVideoBtn">⚡ Enhance Video (Free)</button>
-                <div class="preview-area"><video id="videoPreview" class="preview-video" controls style="display:none;"></video></div>
-                <p style="font-size:12px; margin-top:15px;">🎬 60fps • 4K • Fast AI processing</p>
+                <button id="downloadVideoBtn" class="download-btn" style="display:none;">⬇️ Download Enhanced Video</button>
+                <div class="preview-area">
+                    <video id="videoPreview" class="preview-video" controls style="display:none;"></video>
+                </div>
+                <p class="status-msg" id="videoStatus">🎬 60fps • 4K • Fast AI processing</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a>
-        <p style="margin-top:20px;">© 2026 VisualMax - AI Photo & Video Enhancer</p>
+        <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a>
+        <p style="margin-top:12px;">© 2026 VisualMax - AI Photo & Video Enhancer | Fastest Online Tool</p>
     </footer>
 
     <script>
+        // Toggle 3-dot menu
+        function toggleMenu() {
+            document.getElementById('dropdownMenu').classList.toggle('show');
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-icon')) {
+                let dropdown = document.getElementById('dropdownMenu');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+
+        // ---------- PHOTO ENHANCER with DOWNLOAD ----------
+        let currentPhotoData = null;
+        
         document.getElementById('enhancePhotoBtn').addEventListener('click', function() {
             let file = document.getElementById('photoFile').files[0];
-            if (!file) { alert('Please select a photo first'); return; }
+            let mode = document.getElementById('photoMode').value;
+            if (!file) { alert('📸 Please select a photo first'); return; }
+            
+            let status = document.getElementById('photoStatus');
+            status.innerHTML = '⏳ Processing... Please wait';
+            
             let reader = new FileReader();
             reader.onload = function(e) {
                 let img = new Image();
                 img.onload = function() {
                     let canvas = document.getElementById('photoCanvas');
                     let ctx = canvas.getContext('2d');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
+                    
+                    // For 4K upscale - increase canvas size
+                    let targetWidth = img.width;
+                    let targetHeight = img.height;
+                    if (mode === 'upscale') {
+                        targetWidth = img.width * 2;
+                        targetHeight = img.height * 2;
+                    }
+                    
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+                    ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+                    
                     let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                     let data = imageData.data;
+                    
+                    // Apply enhancement
                     for (let i = 0; i < data.length; i += 4) {
-                        data[i] = Math.min(255, data[i] * 1.25);
-                        data[i+1] = Math.min(255, data[i+1] * 1.25);
-                        data[i+2] = Math.min(255, data[i+2] * 1.25);
+                        if (mode === 'enhance') {
+                            data[i] = Math.min(255, data[i] * 1.25);     // R
+                            data[i+1] = Math.min(255, data[i+1] * 1.25); // G
+                            data[i+2] = Math.min(255, data[i+2] * 1.25); // B
+                        } else if (mode === 'denoise') {
+                            data[i] = data[i] * 0.95;
+                            data[i+1] = data[i+1] * 0.95;
+                            data[i+2] = data[i+2] * 0.95;
+                        }
                     }
                     ctx.putImageData(imageData, 0, 0);
+                    
+                    currentPhotoData = canvas.toDataURL('image/png');
                     let preview = document.getElementById('photoPreview');
-                    preview.src = canvas.toDataURL();
+                    preview.src = currentPhotoData;
                     preview.style.display = 'block';
-                    alert('✅ Enhanced! For production AI, connect backend (Real-ESRGAN API provided)');
+                    document.getElementById('downloadPhotoBtn').style.display = 'block';
+                    status.innerHTML = '✅ Enhanced! Click Download to save. (AI simulation)';
                 };
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         });
+        
+        document.getElementById('downloadPhotoBtn').addEventListener('click', function() {
+            if (currentPhotoData) {
+                let link = document.createElement('a');
+                link.download = 'visualmax_enhanced.png';
+                link.href = currentPhotoData;
+                link.click();
+            } else {
+                alert('Please enhance a photo first');
+            }
+        });
 
+        // ---------- VIDEO ENHANCER with DOWNLOAD ----------
+        let currentVideoBlob = null;
+        
         document.getElementById('enhanceVideoBtn').addEventListener('click', function() {
             let file = document.getElementById('videoFile').files[0];
-            if (!file) { alert('Please select a video first'); return; }
-            let url = URL.createObjectURL(file);
+            if (!file) { alert('🎥 Please select a video first'); return; }
+            
+            let status = document.getElementById('videoStatus');
+            status.innerHTML = '⏳ Processing video... (simulation)';
+            
+            // For demo - create downloadable blob
+            currentVideoBlob = file.slice(0, file.size, file.type);
+            let url = URL.createObjectURL(currentVideoBlob);
             let video = document.getElementById('videoPreview');
             video.src = url;
             video.style.display = 'block';
-            alert('⚡ Ready. For real 4K upscaling, backend API with FFmpeg + AI is ready');
+            document.getElementById('downloadVideoBtn').style.display = 'block';
+            status.innerHTML = '✅ Video ready! Click Download to save. (For real 4K AI, backend needed)';
+        });
+        
+        document.getElementById('downloadVideoBtn').addEventListener('click', function() {
+            if (currentVideoBlob) {
+                let link = document.createElement('a');
+                link.download = 'visualmax_enhanced_video.mp4';
+                link.href = URL.createObjectURL(currentVideoBlob);
+                link.click();
+            } else {
+                alert('Please enhance a video first');
+            }
         });
     </script>
 </body>
